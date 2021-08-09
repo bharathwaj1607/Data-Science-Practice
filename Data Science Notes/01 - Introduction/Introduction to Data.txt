@@ -1,0 +1,15 @@
+TYPES OF DATA:
+PRIMARY - Data that is being collected continuously. It is a fresh data.
+SECONDARY - Data that is already collected and to some extent it is published as well.
+QUALITATIVE - Data that is non numerical and cannot be measured. Ex: Religion, Place of birth etc
+QUANTITATIVE - Data that is numerical and can be measured. QUANTITATIVE can be classified into two - 
+			* Discrete type: Can take only certain values and there is a discontinuity between values. Ex: Room numbers in a hotel
+			* Continuous type: Can take any values that are continuous in a given interval. Ex: Weight measured in the production unit of different papers
+
+TYPES OF DATA SETS:
+RECORD - Relational records, Term-Document data, Transaction data
+GRAPH AND NETWORK - World Wide Web, Social networks, Molecular structures
+ORDERED - Time Series data, Sequential data, Genetic sequence data
+SPATIAL,IMAGE and MULTIMEDIA - Spatial data(maps), image data, video data
+
+
