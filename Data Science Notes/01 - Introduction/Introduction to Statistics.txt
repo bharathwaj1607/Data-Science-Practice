@@ -1,0 +1,18 @@
+IMPORTANCE OF STATISTICS:
+There are three major events where statistics is widely used - 
+E1: Technical development, evolvement of gadgets has resulted in large amount of data. The discovery of patterns and trends in data will improve profitability and gain an advantage in the marketplace.
+E2: Advancement in computing power has enabled to process large amounts of data. There are several faster algos for solving problems and an even better way to visualize the results to the human eye.
+E3: Parallel computing, cloud computing has enabled organizations to solve large scale problems faster and also enabled better storage capablity of large sets of data.
+
+TYPES OF STATISTICS:
+Descriptive Statistics - Refers to what has already happened.
+Inferential Statistics - Refers to what will happen.
+
+IMPORTANT TERMINOLOGIES IN STATISTICS:
+Population - Universe of possible data for an object. Ex: People who have visited the website(data now) or ppl who will visit the website(future data). Population cannot be observed but it is there.
+Parameter - A numerical value associated with the population. Ex: The average time ppl spend on the website. Parameter is also not observed.
+Sample - A selection of the observation from the population. Ex: IP address of the ppl who visited the website.
+Statistic - It is a numerical value associated with an observed sample. Ex: On a given day, the amount of time ppl spent on the website.
+
+TIP:
+Always go from SAMPLE to POPULATION. (OBSERVED TO NOT OBSERVED)
