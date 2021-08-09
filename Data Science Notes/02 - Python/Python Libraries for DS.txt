@@ -1,0 +1,178 @@
+NUMPY:
+* It is a fundamental package for scientific computing with Python
+* It contains n-dimensional array object
+* Array can be a vector or a matrix
+* Numpy can be used as a multi-dimensional container for generic data
+ 
+ 
+Basic import:
+import numpy as np
+
+Some of the methods used in numpy:
+np.array(*list*) - converts the input list into an array
+np.arange(*start*, *stop*, *step*) - creates an array of the mentioned range
+np.zeros((*row*, *column*)) - creates that many number of zeros as an array
+np.ones((*row*, *column*)) - creates that many number of ones as an array
+np.linspace(*start*, *end*, *num*, *endpoint = bool*) - Equal amount of number between start and end
+np.eye(*number*) - creates an identity matrix of number*number matrix
+np.random.rand(*row*, *column*) - creates a random matrix of the specified size in uniform distribution with numbers ranging between 0 and 1
+np.random.randn(*row*, *column*) - creates a random matrix of the specified size in normal distribution with numbers ranging between 0 and 1
+np.random.randint(*start*, *end*, *no.of values needed*) - generates random integers from a start limit to end limit
+
+Important attributes in numpy:
+reshape(*row*, *column*) - reshapes a given array(vector) into a matrix. The count should match with the multiplication of row and column
+min()/max() - returns minimum or maximum values from the array respectively
+argmin()/argmin() - returns the index value(position) of the minimum or the maximum value of the array respectively
+
+
+Important attributes that are not methods:
+shape - returns the shape of the array
+dtype - returns the data type of the array
+T - transpose of a matrix. converts rows into columns and vice versa
+
+Selection can be done based on conditional scenarios and can be indexed as well.
+
+Ex: sample_array = np.arange(1,11)
+	//If we want to select only the numbers which are less than six
+	sample_array[sample_array < 6]
+	//Output --> [1,2,3,4,5]
+
+Some universal mathematical array functions:
+np.sqrt() - Square root
+np.exp() - Exponential
+np.log() - Log values
+np.max() - Maximum value
+np.min() - Minimum value
+np.cos() - Cosine value
+np.sin() - Sin value
+np.sqaure() - Square of the values
+np.round() - Round off to the nearest integer. We can round it off to decimal places also --> np.round(array, decimal = *num*)
+np.std() - Standard Deviation
+np.var() - Variance
+np.mean() - Average
+np.unique() - Returns unique value
+
+
+-----*****-----
+PANDAS:
+Pandas is used for data manipulation and analysis. 
+
+import pandas as pd
+pd.Series(data = *inputdata*, index = *inputdata*) - Converts an input(list, vector, dict) into a series along with custom indexing
+
+Pandas data frames and indexing:
+pd.DataFrame(*inputdata*,*index*,columns = *somedata*) - To create a dataframe
+
+		Ex: import numpy as np
+			  import pandas as pd
+
+			classes = np.array([['Mat','Sci','Eng','Language','Games'],['Mat','Sci','Eng','Language','Games'],['Mat','Sci','Eng','Language','Games'],['Mat','Sci','Eng','Language','Games'],['Mat','Sci','Eng','Language','Games']])
+			days = ['Mon','Tue','Wed','Thurs','Fri']
+			timetable = pd.DataFrame(classes, days, columns = ['Hour1','Hour2','Hour3','Hour4','Hour5'])
+			
+			//Output
+			
+				  Hour1	Hour2	Hour3	    Hour4	  Hour5
+			Mon	 Mat		Sci		Eng		Language	Games
+			Tue	 Mat		Sci		Eng		Language	Games
+			Wed	 Mat		Sci		Eng		Language	Games
+			Thur Mat	  Sci		Eng		Language	Games
+			Fri	 Mat		Sci		Eng		Language	Games
+
+We can perform indexing on the same.
+		Ex: timetable['Hour1']
+		
+		//Output
+		
+		Mon      Mat
+		Tue      Mat
+		Wed      Mat
+		Thurs    Mat
+		Fri      Mat
+
+We can add a new column to an exisiting dataframe
+		Ex: timetable['Hour6'] = 'ValueEdu'
+		
+		//Output
+		
+				 Hour1	Hour2	Hour3	 Hour4	  Hour5		Hour6
+		Mon	  Mat		Sci		Eng		Language	Games	ValueEdu
+		Tue	  Mat		Sci		Eng		Language	Games	ValueEdu
+		Wed	  Mat		Sci		Eng		Language	Games	ValueEdu
+		Thur  Mat	  Sci		Eng		Language	Games	ValueEdu
+		Fri	  Mat		Sci		Eng		Language	Games	ValueEdu
+			
+			
+timetable.drop(*columnname*, axis = 1) - To remove a particular column. If axis is not specified automatically row will be deleted. We have to specify inplace = True otherwise we will have just the view of the column being deleted but actually it is not deleted.
+timetable.iloc[*index*] - Will locate the values of the index mentioned
+timetable.loc['Wed'] - Will locate the values of the custom index mentioned
+
+Subsetting of rows and columns can also be done by indexing:
+		Ex: timetable.loc['Thurs','Hour3']
+		//Output 'Eng'
+		
+		Ex: timetable.loc[['Mon','Tue'],['Hour1','Hour2','Hour3']]
+		//Output 
+		
+					Hour1	Hour2	Hour3
+			Mon Mat		Sci		Eng
+			Tue	Mat		Sci		Eng
+								
+Conditional indexing is also possible.
+
+Indexing:
+reset_index() - Resets the custom index to the original indexing(0...n-1)
+set_index() - To set an existing column as an index
+inplace = True needs to be given if the changes should be implemented. Else only a view will be created.
+
+Deal with missing data:
+np.nan - To manually generate a missing number (nan = not a number)
+dropna() - To drop the nan values from the dataframe (mention axis=1 if you want to drop column containing nan values)
+		   There is an input called thresh which sets the threshold limit. Meaning the particular row or column should contain that many number of non nan values for it not to be deleted.
+		   Ex: dataframe.dropna(thresh = 2) --> There should be minimum of 2 non-nan values in the row for that row not to be deleted.
+fillna(value = *num*) - Fills the nan fields with the value inputted
+To do the same in a more complex way, for ex, we can fill the nan values with the avg of other values in that column. This method usually ensures that there is no major data loss
+
+Merge dataframe in Python
+
+Some operations
+
+dataframe.concat[df1,df2,..] - To concatenate multiple data frames. Concatenation can be done only if there are identical columns between the dataframes.
+
+
+Merge function:
+Merges two data frames using a unique column identifier.
+dataframe.merge(*df1*,*df2*, how = *outer/inner/left/right*, on = *uniquecolumnname*)
+Outer - Does an union function of the unique column. Picks all the values of the unique column from both the dataframe
+Inner - Does an intersection of the unique column. Picks only the common value of the unique column from both the dataframe
+Left - Picks only the values of the unique column from the first declared dataframe
+Right - Picks only the values of the unique column from the second declared dataframe
+
+
+
+Join function:
+Join two data frames based on indexing
+df1.join(df2, how = *outer/inner/left/right*)
+Join basically does a left join i.e., picks up data only from the indexing of the first data frame
+
+Other Pandas functions:
+.head(*num*) - Shows those many number of rows. When no number is mentioned, it shows top 6.
+dataframe['*columnname*'].unique() - Returns unique values in that column
+dataframe['*columnname*'].nunique() - Returns the count of unique values in that column
+dataframe['*columnname*'].value_counts() - Returns the count of each value present in the column
+dataframe['*columnname*'].apply(*functionname*) - We can create custom methods/functions that can be applied on a dataframe for a particular column. We can apply default function like len. We can use universal functions like sum(), mean() etc
+del dataframe['*columnname*'] - To permanently remove a column from the dataframe
+dataframe.sort_values(by = '*columnname*) - Sorts the dataframe based on a particular column 
+dataframe.isnull() - To check if there are any nan values. It returns boolean output
+dataframe.read_csv('*filename.extension*') - To read the dataset from an external source like csv. That csv file should be in the default work location
+dataframe.to_csv('*filename.extension*', index = False) - Stores the dataframe in a csv. Always recommended to give index as False else the first column will be the default indexing
+dataframe.read_excel('*filename.extension*', sheet_name = '*sheetname*') - To read the dataset from an external source like excel. That csv file should be in the default work location
+dataframe.to_excel('*filename.extension*', sheet_name = '*sheetname*') - Stores the dataframe in a csv. Always recommended to give index as False else the first column will be the default indexing
+
+DATA VISUALIZATION:
+Data visualization is used to interpret or show the complex data in a more readble fashion for anyone from the analytical or non analytical background
+
+Some of the commonly used packages - 
+Matplotlib - It is a 2D plotting library with which various chart can be created. Pyplot which is a sub module of Matplotlib is used for statistical plotting.
+Seaborn - It is primarily used for statistical data visualization. It is an interface for drawing high level attractive statistical graphs
+Plotly - Plotly is dynamic in nature unlike seaborn or matplotlib. It offers a high range of customization.
