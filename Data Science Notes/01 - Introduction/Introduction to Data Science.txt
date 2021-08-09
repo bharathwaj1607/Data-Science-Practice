@@ -1,0 +1,17 @@
+DATA SCIENCE:
+Whatever happens in between a data and a final mathematical model. Data is the starting point, mathematical model is the end point. Whatever we do inbetween these two points to achieve the math model is called Data Science.
+
+LEARNING FROM THE DATA:
+Question is - Can we learn about the world around us using the data?
+1. Take data as input
+2. Analyse the data for patterns
+3. Summarize the pattern in a mathematically precise way
+
+MACHINE LEARNING:
+All about automating the above mentioned steps
+
+THE CHALLENGE:
+Data = Information + Noise
+Information is structured, has a pattern and is consistent.
+Noise is unstructured, random and is not consistent.
+The challenge of Machine Learning is to try and devise different types of models (say linear, lognormal) into the data to try and eliminate the noise and find a pattern in the information. 
