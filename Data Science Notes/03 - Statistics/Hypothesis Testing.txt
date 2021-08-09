@@ -1,0 +1,249 @@
+HYPOTHESIS:
+Hypothesis is an assumption for population. There are two types:
+
+ALTERNATE HYPOTHESIS: 
+This hypothesis is what a person wants to prove.
+
+NULL HYPOTHESIS: 
+It is the status quo (what is existing now). The rejection leads to the desired conclusion
+
+Ex: In a court, the prosecutor wants to prove that a person is guilty (ALTERNATE HYPO) under the assumption that he is innocent (status quo/NULL HYPO)
+
+All statistical conclusions are made in reference to the null hypothesis. We can either REJECT or FAIL TO REJECT the null hypo; but we cannot accept it.
+Ex: In a court, the accussed is proven either guilty or not guilty. But innocence is not accepted.
+From the start, we assume that null hypothesis(status quo) is true. Later we reject the assumption or fail to reject the assumption.
+
+REJECT --> Establish the alternate hypo
+FAIL TO REJECT --> Unable to establish the alternate hypo
+When we reject, we can conculde that alternate hypothesis is supported. 
+When we fail to reject, it does not mean that we have proven null hypo is true.
+
+FORMULATION:
+Lets formulate with an example
+Coca cola's best selling is its 600ml bottle. Since 600ml is written in the label, we believe it is true. Is it actually true?
+From a customer POV, we are okay if the volume is >= 600, but anything less will upset. Hence Quantity >= 600 is NULL and Quantity < 600 is alternate.
+From a manufacturer POV, they are okay if they sell exactly 600ml but not okay if it is more than 600.
+
+Sol:
+*Collect 100 bottles from all over so it becomes a random sample
+*Calculate the mean volume 		**POPULATION MEAN = 600**
+*Use the sample mean to test the assumption(status quo)
+
+While formulating the hypothesis,
+1. Am I testing a status quo that already exists? Then it is a NULL hypo, there is no need to prove a question and it always contains equality like -=, <=, >=
+2. Am I testing an assumption or a claim, something beyond I know? Then it is a ALTERNATE hypo, there is a research question to be proved, does not contain equality. -,!=,<,>
+
+TYPE 1 and TYPE 2 errors:
+					
+* If null hypo is true, fail to reject it is correct. If null hypo is false, reject is correct.
+* If null hypo is true and we reject is that is TYPE 1. If null is false but we fail to reject then it is TYPE 2.
+
+We need to intend to control the errors.
+If we manage to control the type 1, the
+		
+		Confidence level = 1-α	
+		
+If we manage to control the type 2, the
+		Power of test = 1 - ß
+
+Power of test is the ability to fail to reject when H0 is false. We have to maximise the power of the test, keeping the value of α low.
+
+
+To calculate the Type 2 error,
+	1. Calculate the t-stat
+	2. In stats.t.cdf(*t-stat*,*df*)
+  
+STEPS IN HYPOTHESIS TESTING:
+1. Develop a clear research problem
+2. Establish both null and alternate hypothesis
+3. Determine appropriate statistical test
+4. Choose Type 1 error rate. If not mentioned, assume it as 0.05
+5. State the decision rule: when to reject/fail to reject null hypothesis
+6. Gather sample data
+7. Calculate test statistic
+8. State the statistical conclusion based on the p value 
+9. Make inference based on the conclusion
+
+If P value is low(< α), NULL HYPO IS REJECTED
+If P value is HIGH(> α), NULL HYPO IS FAIL TO REJECT
+
+TYPES OF HYPOTHESIS TESTING
+
+* Single or two or more samples
+* One tailed or Two tailed
+* Tests of mean, proportion and variance
+
+
+ONE TAILED vs TWO TAILED:
+Case 1: A customer complains that the mean volume of a coke bottle is not equal to 600.
+		
+		Status quo (Null hypo): Mean = 600
+		Want to prove(Alternate hypo): Mean < 600
+		Whenever we talk about less than values it is two tailed. The chances are it could be less or could be more.
+		
+
+Case 2: A manufacturer claims mean of the coke bottle is more than 600.
+		
+		Status quo (Null hypo): Mean = 600
+		Want to prove(Alternate hypo): Mean > 600
+		Whenever we talk about greater than values, it is one tailed. There is only one chance.
+		
+
+Sometimes when we take a sample, even that is not enough to prove that the mean will be exactly 600. The point is, how big or small of a deviation is acceptable. To find this,
+
+
+TWO TAILED(Assume bell shaped distribution):
+			
+						--|-------|-----|-------|-------|------|------|---
+						  -3	  -2 	-1 		0		1 	   2  	  3
+						*..-1.960...*						  *..1.960..*
+						
+						
+In two tailed, the rejection region will be on two sides. Either it is too large or too small. In the above example, mean was 600. Here it is 0 and the rejection is given. We cannot create different models for different measurements. Hence we have to standardize it in a way it is applicable for all the measurements. To do so, we measure it as,
+			
+				X - 600 / Standard Error	
+			  ie  X - 600 / σ/sqrt(n)
+
+We define that -1.960 and 1.960 are the rejection range because we follow the Central Limit Theorem. It is a normal distribution now.
+			
+			
+ONE TAILED(Assume bell shaped distribution):
+			
+			
+			
+						--|-------|-----|-------|-------|------|------|---
+						  -3	  -2 	-1 		0		1 	   2  	  3
+									NA						       *..1.645..*
+									
+	The hypothesis is rejected if X - 600 / σ/sqrt(n) > 1.645
+  
+CONFIDENCE INTERVAL:
+* 95% of all the sample mean are hypothesized to be in this region. It is called 95% confidence interval.
+* If the sample mean is within the 0.95 region, we fail to reject the null hypo.
+* Here α = 0.05
+	   α is the tolerance level towards making a Type 1 error.
+* If null hypo is correct, (α * 100)% of the sample mean should lie in the rejection region.
+
+SINGLE SAMPLE Z-TEST OF MEAN (σ is known):
+Test statistic
+
+		z = x-µ / σ/sqrt(n)
+		
+p-value: How much value is above the test statistic? Does the statistic fall in this region?
+If the p value is less than specific α, then we reject null hypo.
+
+TWO TAILED:
+For α = 0.10, critical value is -1.645 and 1.645
+For α = 0.05, critical value is -1.960 and 1.960
+For α = 0.01, critical value is -2.576 and 2.576
+
+ONE TAILED:
+For α = 0.10, critical value is 1.282
+For α = 0.05, critical value is 1.645
+For α = 0.01, critical value is 2.236
+
+
+STEPS TO SOLVE THE PROBLEM:
+* Check if it is one tailed or two tailed
+* What is H0 and Ha
+* Determine Z and Zstat
+* Draw the normal curve
+* Reject or fail to reject the H0
+
+T-TEST OF MEAN: (σ is unknown)
+Test statistic:
+		
+		z = x-µ / s/sqrt(n)
+		where s is sample standard deviation
+		
+Since σ is not known, we cannot use the normal distribution to determine the critical values. Hence we look at t-distribution.
+The t-statistic depends on the sample size
+
+Say n = 30 and if α=0.05, critical value is -2.045 and 2.045
+Say n = 100 and if α=0.05, critical value is -1.984 and 1.984 (approx 1.96 similar to z test)
+
+TWO SAMPLE TESTS OF MEAN:
+Here, the sample mean is not compared to the population mean, rather two sample means are compared.
+Eg: To understand if the mean volume of the population is 600ml, we take two samples.
+If both the samples are from the same population, then:
+Null hypothesis is, µ1 = µ2 or µ1 - µ2 = 0
+If they are from different population, then one will be greater or lesser than the other.
+*When σ is known, use the z distribution
+		z = (X1 - X2) - Do / sqrt(sq(σ1)/n +sq(σ2)/n)			
+where Do is the target difference. Do is 0 if they are from the same population.
+
+*When σ is not known, use the t distribution
+		t = (X1 - X2) / sqrt(sq(s1)/n + sq(s2)/n)	
+		We need to calculate df (degree of freedom)
+		df = (sq(s1)/n1 + sq(s2)/n2)^2 /  s1^4    +    s2^4
+										  -----       ------
+									  sq(n1)(n1-1)    sq(n2)(n2-1)
+
+
+PAIRED TEST OF MEAN:
+Some sample mean arrive in pairs. They are not independent.
+Say the mean is (X1,Y1). Calculate the difference, D1 = X1-Y1.
+The hypothesis remains the same as µ1 - µ2 = 0 however, we standardize the calculation for the difference and not for the sample means. Hence,
+
+		Z = D / σ/sqrt(n)
+		
+		where D is the mean of the difference. σ is the standard deviation of the difference.
+		
+		
+Basically PAIRED TEST is a ONE SAMPLE T TEST but with two readings.
+
+Z-TEST OF PROPORTION:
+The applied tests of mean can be utilized for proportions as well. Proportions are nothing but fraction.
+
+To understand,
+Coca cola noted that 30% of the bottles are under filled. They corrected. After 5 yrs, upon checking 300 samples, 76 of the bottles were under filled. At 5% significance level, is this evidence sufficient to show the impact on corrective measures?
+
+Null hypo- Ho:Po = 0.30
+Alternate- Ha:Po < 0.30
+
+P = 76/300
+
+For one sample,
+		Z = P - Po / sqrt(Po(1-Po)/n)
+		Then compare the Z score to a normal distribution curve for α = 0.05 and check for rejection.
+		
+For two samples,
+		Z = (P1 - P2) / sqrt(P(1-P).sqrt(1/n1+1/n2))
+    
+CHI SQUARE TEST:
+It is a test for variance. When we take many samples from the same population and calculate their mean, it is likely to follow normal distribution. Whereas when we take many samples from the same population and calculate their variances, it is likely to follow chi square distribution, which is dependent on the degree of freedom. The distribution curve varies for different size of the samples and each has a df value.
+
+Chi square can be formulated as,
+
+			X^2 = (n-1)s^2 / σ^2
+			
+			n - sample size
+			s^2 - sample variance
+			σ^2 - population variance (to be tested)
+			
+			Here, s^2/σ^2 = 1, hence chi square is approx = n-1. Then looking at the df table and compare to n-1
+			
+
+A similar cut off value can be determined based on whether it is one tailed or two tailed.
+
+Reject if,
+		
+		X^2 > upper critical limit
+		or
+		X^2 < lower critical limit
+    
+    
+F-ratio test of variance:
+When two independent samples are taken from the same population with equal variances, the sampling ratio of the variances follow a F-distribution.
+Basically comparison of two variances.
+
+			F = S^2x / S^2y
+			
+			where S^2x is the larger sample variance and S^2y is the smaller sample variance.
+			Both the numerator and denominator will have its individual df
+			df is calculated as n-1
+			
+			
+F-distribution is only right tailed.
+
+For α = 0.05 and df1 = 24, df2 = 21
