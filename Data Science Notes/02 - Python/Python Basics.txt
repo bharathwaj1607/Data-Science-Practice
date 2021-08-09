@@ -1,0 +1,8 @@
+WHAT IS PYTHON?
+It is an Object Oriented Programming Language. Easy to learn but takes longer time for the code to execute. It is easy to debug a python code. 
+
+BASIC INSTALLATION OF ANACONDA PROMPT:
+Goto www.anaconda.org and download.
+After downloading, go to Anaconda Prompt and navigate to the directory where you wish to work
+Type the command 'jupyter notebook'
+A browser based IDE is opened in a webpage
