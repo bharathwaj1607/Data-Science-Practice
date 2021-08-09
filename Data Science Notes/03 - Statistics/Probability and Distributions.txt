@@ -1,0 +1,193 @@
+PROBABILITY:
+Experiment is a process that is performed to understand and observe the possible outcomes.
+Event is an outcome of an experiment
+Sample space is a set of all the outcomes of an experiment
+Probability is a chance or a likelihood of a particular event to take place
+
+
+PROBABILITY:
+Probability of an event A is defined as the ratio of two numbers m and n.
+
+			P(A) = m/n
+			
+			m - number of ways that are favourable for the occurrence
+			n - total number of outcomes of that experiment
+			
+		P(A) is always >= 0 and always <= 1. P(A) is a pure number.
+		
+
+Extreme values of Probability:
+P(A) = 1 -> 100% chance or certainity
+P(A) = 0.5 -> 50% chance or equally likely
+P(A) = 0 -> 0% chance or impossibility
+
+
+Mutually exclusive events:
+Two events are said to be mutually exclusive, if one of the event's occurrence preculdes the occurrence of the other event.
+Ex: In a deck of cards, if you pick a random card and you want to know if it is a king or queen. The selected card will be either a king or a queen. It can't be both. If king occurs, queen cannot and vice versa.
+
+Independent events:
+Two events are said to be independent, if one event's occurrence does not have any influence on the occurrence of the other event.
+
+TIP:
+MUTUALLY EXCLUSIVE EVENT IS NOT INDEPENDENT.
+
+Rules for Computing Probability:
+1. Addition rule - Mutually exclusive events:
+
+		P(AuB) = P(A) + P(B) 
+		
+		P(AuB) -> Either A or B or both has occurred. When A and B are mutually exclusive, both cannot occur.
+
+2. Addition rule - Not mutually exclusive events:
+
+		P(AuB) = P(A) + P(B) - P(AnB)
+		
+		If the events are mutually disjoint, then P(AnB) = 0
+		Both A and B can simultaneously occur
+		
+3. Multiplication rule - Independent events
+
+		P(AnB) = P(A).P(B)
+		
+4. Multiplication rules - Non Independent events
+
+		P(AnB) = P(A).P(B/A)
+		
+		P(B/A) is called conditional probability of B given that A has already happened.
+		
+	Also, P(AnB) = P(B).P(A/B) if B has already happened.
+			
+u -> union 
+n -> intersection
+
+Marginal Probability:
+Contingency table consists of rows and columns of two attributes at different levels of frequencies or numbers in each of the cells. It is a matrix of frequencies arranged in rows and columns. 
+The term marginal is used to indicate that the probability is calculated from the contingency table aka Joint probability table.
+
+Example:
+
+
+			Family		Income < 20k		Income >= 20k 		Total
+			
+			Buyer			      38					 42				       80
+			
+			Non buyer		   82					   38				       120
+			
+			Total 			  120					     80				       200
+			
+			
+			
+		1. What is the probability that a randomly selected family is a buyer? --> 80/200 (Marginal)
+		2. What is the probability that a selected fam is both a buyer and income of > 20k? --> 42/200 (Joint)
+		3. A fam is selected at random and they belong to income of > 20k. 
+		   What is the probability that they are a buyer? --> 42/80 (Conditional)
+       
+       
+BAYES THEOREM:
+Bayes theorem is defined as a revised probability of an event. The revised probability is called Posterior Probability. The posterior probability is achieved by the joint, conditional probabilities of the prior probability.
+In simple terms, it is defined as looking at the probability from the other side.
+
+Let, first side -> P(A|B).
+	P(B|A) = P(AnB) / P(A)   (formula from multiplication rule)
+	Bayes theorem is about calculating the probability from the other side which is;
+	Other side -> P(B|A).
+	P(A|B) = P(BnA) / P(B)
+	In both these sides, numerator is the same ie., an intersection of A and B. Hence we can rewrite the Bayes theorem as,
+	
+								
+								P(A|B) = P(B|A).P(A) / P(B)
+								
+	
+Lets look at it in an example
+A malaria test is 95% accurate. If a person takes the test and turns out to be positive, it is 95% sure that he is positive. Same 95% if he tests negative.
+A test comes out positive. What is the probability that the particular person has malaria?
+
+Lets assume,
+M = malaria  N = no malaria  + = positive  - = negative
+
+We know,
+A patient is positive, given he has malaria => P(+|M) = 0.95
+A patient is negative, given he has no malaria => P(+|N) = 0.95
+
+We have to find, what is the probability of a person having malaria, given the test is positive => P(M|+)?
+
+
+						P(+|M) = P(+nM) / P(M) = 0.95
+						P(+|N) = P(+nN) / P(N) = 0.95
+						P(M|+) = P(Mn+) / P(+) = ?
+						P(M|+) = P(+|M).P(M) / P(+) (Lets assume 1% of the tested people are positive, hence P(M) = 0.1)
+							   
+							   = 0.95*0.01 / P(+)
+							   = 0.0095 / P(M|+) + P(N|+)
+							   = 0.0095 / (P(+|M).P(M)) + (P(+|N).P(N))
+							   = 0.0095 / (0.95*0.01) + (0.05*0.99)
+							   = 0.0095 / 0.059
+						P(M|+) = 0.16
+						
+Therefore, 16% of the cases whose results came out to be positive, will have malaria.
+
+BINOMIAL DISTRIBUTION aka BERNOULLI PROCESS:
+It is a total listing of various values of the random variables along with the corresponding probability of each value.
+
+Binomial Distribution is widely used probability for a discrete random variable.
+	1. It is used in quality control and quality assurance function. Ex: In manufacturing units, how many outcome products are defected and defect free
+	2. It is also used in service org to get an idea of proportion. Ex: Customers who are satisfied and not satisfied with the service.
+	
+Conditions for applying Binomial Distribution:
+* Trials are independent and random
+* Trials are fixed in number (n trials)
+* There are only two outcomes for a trial; either success or failure
+* The probability of success is uniform throughout the n trials.
+
+
+BINOMIAL DISTRIBUTION formula:
+P(X) = (n P^x(1-P)^(n-x)
+		x)
+		
+		where
+		P(X) - Probability of x success in n trials
+		(n   - n!/x!(n-x)!
+		 x)
+		P^x  - Probability to the power of success
+		(1-P)^(n-x) - Negative is always 1 - positive to the power of no of trials - success
+		
+		
+Mean and SD in Binomial Distribution:
+Mean, µ = np
+	  
+	  where, 
+	  n = no of trials
+	  p = positive outcomes
+SD, σ = sqrt(np(1-p))
+
+POISSON DISTRIBUTION:
+It is another discrete distribution focused on the count, but unlike Binomial, it does not bother about the number of trials or no of possibilities. It is not expected in ratio or proportion.
+Ex: No of cars arriving at a check post. 
+	This is just a count. Doesn't bother about the total number of cars or other variables.
+
+Formula:
+		
+		P(X) = e^-lambda.lambda^x / x!
+		
+		
+Mean and Standard Deviation for Poisson:
+Mean = lambda
+SD = sqrt(lambda)
+
+NORMAL DISTRIBUTION or GAUSSIAN DISTRIBUTION:
+Normal distribution is calculated based on continuous numbers. It has a bell shaped symmetric distribution where the mean, median and mode are the same. 
+
+In Normal Distribution,
+µ - Mean  σ - Standard Deviation
+
+µ±1σ (1 SD variation around the mean) - covers 68% of the data approx in the bell shape distribution 
+µ±2σ (2 SD variation around the mean) - covers 95% of the data approx in the bell shape distribution
+µ±3σ (3 SD variation around the mean) - covers 99.7% of the data approx in the bell shape distribution
+
+
+STANDARD NORMAL DISTRIBUTION:
+When you take an observation x, subtract it with the mean and divide by SD, it is called standardization and you end up with a random variable. 
+z = x - µ / σ
+
+z is a pure dimensionless number. It will have mean = 0 and SD = 1
