@@ -1,0 +1,144 @@
+DIFFERENT METHODS IN STATISTICS:
+Classification - Segmenting the data into appropriate groups based on key characteristics
+Pattern Recognition - Recognizing certain shapes and data which appear to be common. Pattern is mostly used to separate information from the noise.
+Association - Relationship between objects. Put the idea of probability into data. Ex: There is a 40% probability that someone who buys coffee will buy bread. But not everyone who buys coffee buys bread.
+Predictive Modeling - Regression is mostly an equation where we can predict the defined response using the input variables. (Ex: y = a+bx - x is the input variable. y is the defined response)
+
+
+TYPES OF STATISTICS:
+Descriptive Statistics - Refers to what has already happened.
+Inferential Statistics - Refers to what will happen.
+
+DATA and HISTOGRAM:
+To summarize a data, we need to extract the information from the data. Data needs to be arranged into information.
+
+Raw data: 
+Numbers and fact that are in original condition as they were collected. We need to convert them into information to perform decision making
+
+
+DATA --> INFORMATION --> KNOWLEDGE --> WISDOM
+The transition of data into information is where descriptive statistics is used.
+
+Frequency distribution: 
+It is a summarized table where raw data is arranged in classes and frequencies. It is used as a data reduction technique.
+
+Histogram: 
+A graphical representation of frequency distribution. X axis contains data (or) classes, Y axis contains how much data (or) frequency.
+
+Cummulative Frequency Distribution: 
+A distribution that shows how many observations are above and below the lower boundaries of the classes.
+
+Central Tendency: 
+When you measure things of the same kind, a large number of measurements tend to cluster around the middle value. Such a value is called CENTRAL TENDENCY. It is also know as MEASURES OF LOCATION or STATISTICAL AVERAGES.
+
+Arithmetic mean: 
+It is the sum of all observations divided by the total number of observations. It is not ideal to apply mean when there is an extreme data or fluctuations in data (very high or very low data).
+
+Median: 
+It is the middle most observation when you arrange a data in ascending order. Median is not affected by the extreme values. If there are odd no of observations, use n+1/2 to get the middle value. If there are even no of observations we take the avg of the middle values. MEDIAN is also referred as 50th percentile.
+
+Mode: 
+It is the value that occurs most often. Maximum frequency of occurrence. It is not affected by extreme values.
+
+***Imagine a data set with 10 employees and their salaries. The average of the salaries of the employees is MEAN. The salary of the average of the employees(5th employee - middle most observation) is MEDIAN. If 4 people are getting 25000 as their salaries then that is MODE***
+
+Measures of Dispersion: 
+The amount of spread of distribution over the central tendency.
+
+Range: 
+The simplest notion of dispersion is range. It is the difference between the maximum value and the minimum value in the data set. 
+Range = Xmaximum - Xminimum
+If Xmaximum = Xminimum, all the observations are equal. It means there is zero range. If either the maximum or the minimum value becomes an extreme value, range should not be used.
+
+Inter-Quartile Range: 
+Range that is calculated on the middle 50% observations by eliminating the minimum 25% and the maximum 25%. It is not affected by extreme values. 
+					
+IQR  = Q3 - Q1
+
+								(Inter Quartile)
+							{---------50%----------}
+	min<--------|----------------------|-------->max
+							25%								     75%
+				(Lower Quartile Q1)			(Upper Quartile Q3)
+        
+ 
+Standard Deviation:
+It is the square root of variance.
+
+Example: 
+We have a dataset of 10 numbers, x = 10,11,13,14,15.5,16,11,12.4,13,17
+Average of these numbers, X = 13.2
+Variation, X-x = -3.2,-2.2,-0.2,0.8,2.3,2.8,-2.2,-0.8,-0.2,6.8
+Squared variation, (X-x)^2 = 10.24,4.84,0.04,5.29,4.84,7.84,4.84,5.29,0.04,46.24		 
+Variance = Total sum of Squared variation / (no of observations - 1)
+In our case, Variance = 89.50/9 => 9.94
+Std Dev = Sqrt(Variance)
+In our case, Std Dev = Sqrt(9.94) => 3.15
+		 
+TIP:
+If the mean of the dataset is estimated, divide by n-1.
+If the mean is not estimated and it comes from a population, divide by n.
+
+COEFFICIENT OF VARIATION (Relative dispersion):
+It is the ratio of the standard deviation to the mean.
+It is also the Standard Deviation expressed as a percentage of the mean. Ex: 10% of the variation
+CV = S / X
+Do not get carried away by the mean. More variation means more risk.
+
+EMPIRICAL RULE AND CHEBYSHEV RULE:
+The Empirical rule approximates the variation of a data in a bell shaped distribution.
+
+µ - Mean  σ - Standard Deviation
+
+µ±1σ (1 SD variation around the mean) - covers 68% of the data approx in the bell shape distribution 
+µ±2σ (2 SD variation around the mean) - covers 95% of the data approx in the bell shape distribution
+µ±3σ (3 SD variation around the mean) - covers 99.7% of the data approx in the bell shape distribution
+
+Chebyshev Rule:
+Regardless how the data is distributed, atleast (1- 1/k*k) *100% values will be within the deviation of the mean.
+For ex: if k=2, (1-1/4)*100% => 75% of the data will be covered under µ±2σ.
+The Chebyshev rule is used when the data is not in bell shape.
+
+FIVE NUMBER SUMMARY AND THE BOX PLOT:
+The numbers that are used to describe the shape, distribution and the center of the data are -
+Xsmallest
+First Quartile(Q1)
+Median (Q2)
+Third Quartile(Q3)
+Xlargest
+
+Distribution Shape:
+Symmetric - Q2 will be roughly in the middle of Q1 and Q3
+Left skewed - Q2 and Q3 will be closer to each other
+Right skewed - Q1 and Q2 will be closer to each other 
+
+Skewness => represents the assymetric shape
+Five number summary can be graphically represented by the box plot
+
+
+				  25%							              25%
+			|----------[  25%   |  25%  ]----------|
+	Xsmallest		   Q1     Median   Q3         Xlargest
+	
+	
+Box plots can be horizontal or vertical. If the data is symmetric, the median is centered between the two end points.
+If there is a longer whisker in the boxplot, the line stops at(1.5*IQR) and a dot is kept at the highest point of the outlier.
+
+
+Other plots that are used to display descriptive statistics:
+BoxPlot - Graphic display of the five number summary
+Histogram - x-axis represents values, y-axis represents frequency
+Quantile Plot - Sorts the data as if they are equally spaced
+Quantile-Quantile Plot - Graphs the quantile of one univariate distribution against the corresponding quantile of another
+Scatter Plot - Each pair of values is a pair of co-ordinates plotted as a point in the graph 
+
+Correlation of data: 
+Usually observed in bivariate distribution. The correlation is, if the value of one variable increases, does the value of the other variable increases or decreases. Based on it, it can be classified as Positively correlated data and Negative correlated data.
+
+DATA VISUALIZATION:
+*To gain insight into an information space by mapping data onto graphical primitives.
+*Provide qualitative overview for large data sets
+*Search for patterns, trends, irregularities, relationships among data
+*Helps to find interesting regions for further quantitative analysis
+*Visual proof of computer derivations
+
